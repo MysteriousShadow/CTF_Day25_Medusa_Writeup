@@ -38,7 +38,7 @@ That <code>Python.exe</code> has to be the malicious file, so don't actually run
 
 ## Decoding Python.exe
 
-Running the <code>file</code> command on the EXE will output <code>PE32 executable (GUI) Intel 80386, for MS Windows</code> Searching for something like how to reverse a PE32 EXE or Windows EXE gives this valueble StackOverflow link: https://stackoverflow.com/questions/273145/is-it-possible-to-decompile-a-windows-exe-or-at-least-view-the-assembly.
+Running the <code>file</code> command on the EXE will output <code>PE32 executable (GUI) Intel 80386, for MS Windows</code>. Searching for something like how to reverse a PE32 EXE or Windows EXE gives this valueble StackOverflow link: https://stackoverflow.com/questions/273145/is-it-possible-to-decompile-a-windows-exe-or-at-least-view-the-assembly.
 
 It talked about how with a decompiler, you can reverse an EXE into its original source code. If you don't know the language of the source code, you can find out with <a href=https://horsicq.github.io>Detect It Easy</a>. The challenge creator hinted about DiE as well.
 
@@ -178,7 +178,7 @@ Reading further down, you'll find a wall of base64 encoded data, in which is ide
 
 Should we do the same thing? Write code that reads the file_id and chunk_num and chunk_data and reassemble all those into the original files. Doing that correctly will 100% give us <code>flag.txt</code>.
 
-But it doesn't have to be that complicated! Each file as a unique <code>file_id</code>, so what is the file_id for <code>flag.txt</code>? You can search for flag in the text or scroll down to the bottom to see:
+But it doesn't have to be that complicated! Each file has a unique <code>file_id</code>, so what is the file_id for <code>flag.txt</code>? You can search for flag in the text or scroll down to the bottom to see:
 
 <code>"command":"download","parameters":"{\"file\": \"C:\\\\Users\\\\rey\\\\Documents\\\\flag.txt\"}","id":"380c4fc4-a232-4fb0-9678-2f2000eb7f9c"}]}</code>. There! Search for <code>380c4fc4-a232-4fb0-9678-2f2000eb7f9c</code> in the text and eventually arrive at:
 
